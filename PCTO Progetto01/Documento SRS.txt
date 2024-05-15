@@ -1,0 +1,63 @@
+
+SRS:
+gestione Personae. Creare un’applicazione con seguente menu di scelta:
+[1] Inserimento
+[2] modifica
+[3] cancella 
+[4] trova
+[5] stampa elenco personae
+[6] visualizza schede personae
+[7] Esci
+Il Menu. sia visualizzato all’avvio dell’applicazione ed dopo ogni attività conclusa.
+Alla fine di ogni attività Aggiungere una pausa del tipo “premi invio per continu
+are”.
+L’entità Persona dovrà essere composta dalle seguenti proprietà:
+-id int gestito automaticamente
+-Nome string
+-Cognome string
+-luogo di nascita string
+-data di nascita DateTime
+-sesso (maschio, femmina,altro) string
+-CF string
+
+gestione id:
+Creare un file “Sequenza.txt”
+Provare a leggere il file, se non esite, se falso il file viene creato e si memorizza 1 come primo id, e si imposta l’id come uguale a 1.
+Se il file esiste leggere il valore dell’id salvato si legge, incrementandolo di 1, questo diverrà il nuovo Id.
+Mai apportare modifiche agli id e visualizzarlo SOLO nel caso [6].
+Tale funzionalità, quando scelta, deve presentare il seguente Menu:
+[1]trova per id
+[2]trova per Cognome e nome
+il trova per Id deve visualizzare impaginato (5 righe per pagina) tutte le persone presenti nel repository(lista di tipo persona).
+A ricerca dell’id , se l’id viene trovato: stampare la scheda persona, altrimenti visualizzare “id non trovato”.
+Nel caso di “trova per cognome e Nome”
+Si presentino i seguenti casi:
+[1] dato il cognome e nome da cercare, se la ricerca produce 1 solo risultato visualizzare la scheda persona
+[2]dato il cognome e nome da cercaer, se la ricerca produce più risultati, visualizzare  l’elenco delle persone trovate e impostare la ricerca per Id
+[3] Se la ricerca non produce risultati, si visualizzi “Persona non trovata”.
+
+
+
+
+Architettura.
+l’applicazione dovrà essere composta da 4 componenti:
+1)Classe “Avvio” con Main (Controller)
+2)Classe “Persona” (Model/Entità)
+3)Classe “PersonaDAO” (Componente CRUD o Servizio) 
+   Questa classe conterrà il repository privato, i metodi di CRUD:
+    -Inserimento, modifca, cancellazione, lettura, duplicazione- di una Persona.
+4)Creare una classe “View” la quale contenga i seguenti metodi:
+   -”LeggiStringa”
+   -”LeggiIntero”
+   -”VisualizzaMessaggio”
+   -”MenuPrincipale”
+   -”menuTrova”
+   -”inserisciPersona”
+   -”ModificaPersona”
+   -”cancellaPersona”
+   -”VisualizzaPersona”
+   -”VisualizzaSchedePersona”
+   -”TrovaPersona”
+
+
+
